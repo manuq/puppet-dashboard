@@ -1,0 +1,33 @@
+Nodefiles
+=========
+
+Plugin for puppet-dashboard to add arbitrary files from nodes.
+
+
+Usage
+=====
+
+Setup:
+
+    rake puppet:plugin:install PLUGIN=nodefiles
+
+
+Add this line to config/routes.rb:
+
+    map.connect 'nodes/:node_id/files', :controller => :nodefiles, :action => :nodefiles
+
+
+Import:
+
+    rake nodefiles:import NODEFILES_DIR=path/to/files
+
+In the directory there must be subdirs with the same name as node
+hostnames, and files for that node inside.
+
+
+List files, open:
+
+     http://DOMAIN_NAME/NODE_ID/files
+
+
+Copyright (c) 2014 Manuel Quiñones, released under the MIT license

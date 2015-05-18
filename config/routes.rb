@@ -48,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.connect 'radiator', :controller => :radiator, :action => :index
 
+  map.connect 'nodes/:node_id/files', :controller => :nodefiles, :action => :nodefiles
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
